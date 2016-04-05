@@ -17,6 +17,8 @@ public class UI extends javax.swing.JFrame {
      */
     public UI() {
         initComponents();
+        show_window();
+        this.setVisible(true);
     }
 
     /**
@@ -38,9 +40,9 @@ public class UI extends javax.swing.JFrame {
         HEAD = new javax.swing.JRadioButton();
         PUT = new javax.swing.JRadioButton();
         URL = new java.awt.TextField();
-        jButton1 = new javax.swing.JButton();
+        Enter = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        header_area = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,18 +66,24 @@ public class UI extends javax.swing.JFrame {
         buttonGroup1.add(PUT);
         PUT.setText("PUT");
 
-        URL.setText("URL");
+        URL.setText("Enter URL Here");
         URL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 URLActionPerformed(evt);
             }
         });
 
-        jButton1.setText("jButton1");
+        Enter.setActionCommand("Enter");
+        Enter.setLabel("Enter");
+        Enter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enter_handler(evt);
+            }
+        });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        header_area.setColumns(20);
+        header_area.setRows(5);
+        jScrollPane1.setViewportView(header_area);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -94,7 +102,7 @@ public class UI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jRadioButton2, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(Enter)
                         .addGap(66, 66, 66)
                         .addComponent(OPTIONS))
                     .addComponent(PUT, javax.swing.GroupLayout.Alignment.TRAILING)))
@@ -110,7 +118,7 @@ public class UI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(OPTIONS)
-                    .addComponent(jButton1))
+                    .addComponent(Enter))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(HEAD)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -130,10 +138,14 @@ public class UI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_URLActionPerformed
 
+    private void enter_handler(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enter_handler
+        // TODO add your handling code here:
+    }//GEN-LAST:event_enter_handler
+
     /**
      * @param args the command line arguments
      */
-    public static void mainn() {
+    public static void show_window() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -157,15 +169,16 @@ public class UI extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the form 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new UI().setVisible(true);
             }
-        });
+        });*/
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Enter;
     private javax.swing.JRadioButton GET;
     private javax.swing.JRadioButton HEAD;
     private javax.swing.JRadioButton OPTIONS;
@@ -176,10 +189,9 @@ public class UI extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.ButtonGroup buttonGroup5;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextArea header_area;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

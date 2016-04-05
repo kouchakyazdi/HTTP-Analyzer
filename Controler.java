@@ -6,10 +6,23 @@
 
 package httpanalyzer;
 
+import java.io.IOException;
+
 /**
  *
  * @author mohamad
  */
 public class Controler {
+
+    /**
+     * @param args the command line arguments
+     */
+    private UI ui;
+    private AnalyzeHttp analyzeHttp;
+    public static void main(String[] args) throws IOException {
+        
+        AnalyzeHttp analyzeHttp = new AnalyzeHttp();
+//        UI ui = new UI();          for User Interface
+        }
     
 }
